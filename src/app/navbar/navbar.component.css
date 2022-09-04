@@ -1,0 +1,12 @@
+
+.navStart{
+  display: flex;
+  background-color: cornflowerblue;
+  border-radius: 10px;
+  padding-right: 15px;
+  width: 100%;
+
+}
+.navbar{
+  display:contents;
+}

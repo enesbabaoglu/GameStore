@@ -1,0 +1,28 @@
+<p-dialog header="Add New Game" [(visible)]="displayBasic2" [style]="{width: '70vw'}">
+
+  <div [formGroup]="form">
+    <div class="container">
+      <div class=" row field">
+        <label for="name" class="primary">Name</label>
+        <input formControlName="name"  id="name" type="username" aria-describedby="name-help" class="primary ng-invalid ng-dirty" pInputText />
+        <small id="name-help" class="p-error block">name is not available.</small>
+      </div>
+      <div class="row field">
+        <label for="bundle" class="block">Bundle</label>
+        <input formControlName="bundle"  id="bundle" type="username" aria-describedby="bundle-help" class="ng-invalid ng-dirty" pInputText />
+        <small id="bundle-help" class="p-error block">name is not available.</small>
+      </div>
+      <div class="
+    row field">
+        <label for="owner" class="block">Owner</label>
+        <input formControlName="name"  id="owner" type="username" aria-describedby="owner-help" class="ng-invalid ng-dirty" pInputText />
+        <small id="owner-help" class="p-error block">name is not available.</small>
+      </div>
+    </div>
+
+  </div>
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="save()"  label="Save" styleClass="p-button-text"></p-button>
+  </ng-template>
+
+</p-dialog>
