@@ -17,6 +17,8 @@ import { GameCreateComponent } from './game-create/game-create.component';
 import {DialogModule} from "primeng/dialog";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
+import {FileUploadModule} from "primeng/fileupload";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -30,6 +32,7 @@ import {RouterModule} from "@angular/router";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MenuModule,
     MenubarModule,
     CardModule,
@@ -39,9 +42,9 @@ import {RouterModule} from "@angular/router";
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: 'game-create', component: GameCreateComponent },
-
+      {path: 'game-create', component: GameCreateComponent},
     ]),
+    FileUploadModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

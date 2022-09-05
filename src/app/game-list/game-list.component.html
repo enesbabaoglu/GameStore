@@ -1,10 +1,12 @@
 
   <div class="container">
-    <div class="row center">
-      <h2 class="header">Game List</h2></div>
+    <div class="row header">
+      <h2 class="col-lg-8">Game List</h2>
+      <input  class ="col-lg-4" type="text" pInputText placeholder="Search" [(ngModel)]="searchText" (ngModelChange)="onSearchChange($event)">
+    </div>
     <div class="row" >
-        <div class="col-sm-12 col-md-6 col-xl-4" *ngFor="let item of getGames()">
-            <p-card  header="{{item.Name}}" :subheader="{{item.Owner}}" [style]="{width: '360px','margin-top': '10px'}" styleClass="p-card-shadow" >
+        <div class="col-sm-12 col-md-6 col-xl-4" *ngFor="let item of games">
+            <p-card  header="{{item.name}}" :subheader="{{item.owner}}" [style]="{width: '360px','margin-top': '10px'}" styleClass="p-card-shadow" >
               <ng-template  pTemplate="header">
                 <img alt="Card" src="https://cdn.pixabay.com/photo/2016/07/12/15/59/dragon-1512457_960_720.png">
               </ng-template>

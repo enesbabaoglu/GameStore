@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router, RouterModule} from "@angular/router";
+import {Game} from "../game";
+import {GameService} from "../game-service";
 
 @Component({
   selector: 'game-create',
@@ -15,7 +17,7 @@ export class GameCreateComponent implements OnInit {
   owner:any;
   form : any;
 
-  constructor(  private route: ActivatedRoute,private router: Router ) { }
+  constructor(  private route: ActivatedRoute,private router: Router,private gameService: GameService ) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -28,6 +30,18 @@ export class GameCreateComponent implements OnInit {
   }
   save():void{
     this.displayBasic2=false;
+    let game: Game={
+      id:this.gameService.getAll().length+1,
+      name:this.form.value.name,
+      bundle:this.form.value.bundle,
+      owner:this.form.value.owner,
+      description:"fsdfdsfsdf"
+    }
+    this.add(game);
+
     this.router.navigate(['/']);
+  }
+  add(game:Game){
+    this.gameService.add(game);
   }
 }
